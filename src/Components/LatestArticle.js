@@ -86,7 +86,6 @@ const LatestArticle = () => {
               <CardActions>
                 <Grid item 
                 sx={{textTransform: "capitalize", px: 3 ,backgroundColor:"white",color:"#4089ED",fontWeight:"600",fontSize:16,fontFamily:"Mulish"}}>
-
                   Read More
                 </Grid>
               </CardActions>

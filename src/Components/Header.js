@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef, useEffect } from "react";
 import { Typography, Grid } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
@@ -10,7 +10,18 @@ const drawerWidth = 260;
 
 const Header = () => {
   const [mobileDrawer, setMobileDrawer] = useState(false);
+  const scrollRef = useRef();
 
+
+  const handleScroll = (id)=>{
+    console.log("id>>>>",id)
+    let element = document.getElementById(id);
+    window.scrollTo({
+      top:element.offsetTop,
+      behavior:"smooth"
+    })
+  }
+  
   const handleDrawerState = () => {
     setMobileDrawer(!mobileDrawer);
   };
@@ -60,7 +71,7 @@ const Header = () => {
           background:'white'
         }}
       >
-        {navItems.map((item) => (
+        {navItems.map((item,index) => (
           <Grid
             container
             item
@@ -73,6 +84,8 @@ const Header = () => {
               fontWeight: "400",
               fontFamily: "Mulish",
             }}
+            id={item}
+            onClick={()=>handleScroll(item)}
           >
             {item}
           </Grid>
@@ -141,6 +154,8 @@ sx={{background:'white'}}
               item
               xs={2}
               sm={2}
+              id={item}
+              onClick={()=>handleScroll(item)}
               justifyContent={"center"}
               sx={{
                 fontSize: { sm: ".9rem", md: "1.2rem" },

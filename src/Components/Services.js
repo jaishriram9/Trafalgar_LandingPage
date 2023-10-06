@@ -142,14 +142,15 @@ const Services = () => {
         <Grid
           container
           item
+          py={1}
           xs={6}
           sm={3}
-          md={3}
+          md={2}
           justifyContent={"center"}
           style={{ border: "1px solid #458FF6", borderRadius: 25 }}
         >
           <Typography
-            sx={{ fontSize: { xs: 20, sm: 22, md: 26 } }}
+            sx={{ fontSize: { xs: 18, sm: 18, md: 18 } }}
             style={{
               fontFamily: "Mulish",
               fontWeight: "700",
@@ -163,12 +164,12 @@ const Services = () => {
 
       {/***SERVICE 1 Section***/}
 
-      <Grid container xs={12} mt={10}  sx={{p:{xs:3,sm:5,md:8}}}>
-        <Grid item xs={12} sm={6} md={6} lg={6}  >
+      <Grid container xs={12} mt={10} sx={{ p: { xs: 3, sm: 5, md: 8 } }}>
+        <Grid item xs={12} sm={6} md={6} lg={6}>
           <img
             src={ServiceImage}
             alt="ServiceSectionImage"
-            style={{minWidth:"99%", maxWidth: "99%" }}
+            style={{ minWidth: "99%", maxWidth: "99%" }}
           />
         </Grid>
         <Grid
@@ -201,17 +202,30 @@ const Services = () => {
             accessible on mobile and online for everyone. To us, it’s not just
             work. We take pride in the solutions we deliver
           </Typography>
-          <Grid item xs={6} sx={{ px: { xs: 1, sm: 2 } }}>
-            <Button
-              style={{
+          <Grid
+            item
+            xs={6}
+            sm={5}
+            md={4}
+            sx={{
+              px: { xs: 1, sm: 2 },
+              py:{xs:1},
+              border: "1px solid #458FF6",
+              borderRadius: 20,
+              marginLeft:2
+            }}
+          >
+            <Typography
+              sx={{
+                textAlign:'center',
                 color: "#458FF6",
-                border: "1px solid #458FF6",
-                borderRadius: 20,
                 textTransform: "capitalize",
+               
               }}
             >
-              Learn More
-            </Button>
+              Learn More 
+            </Typography>
+           
           </Grid>
         </Grid>
       </Grid>

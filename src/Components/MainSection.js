@@ -38,7 +38,8 @@ const MainSection = () => {
           container
           justifyContent={'center'}
           xs={6}
-          sm={4}
+          sm={5}
+          md={4}
           sx={{
             p: {xs:1, md:1, },
             fontSize:{xs:14,sm:18},
