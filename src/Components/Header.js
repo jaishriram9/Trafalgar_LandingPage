@@ -1,33 +1,32 @@
-import React, { useState,useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Typography, Grid } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Logo from "../assets/Images/Ellipse.png";
 import MenuIcon from "@mui/icons-material/Menu";
-const navItems = ["Home", "Find a Doctor", "Apps", "Testimonials", "About Us"];
+const navItems = ["Home", "Services", "Apps", "Testimonials", "About Us"];
 const drawerWidth = 260;
 
 const Header = () => {
   const [mobileDrawer, setMobileDrawer] = useState(false);
   const scrollRef = useRef();
 
+  // const handleScroll = (id) => {
+  //   console.log("id>>>>", id);
+  //   let element = document.getElementById(id);
+  //   window.scrollTo({
+  //     top: element.offsetTop,
+  //     behavior: "smooth",
+  //   });
+  // };
 
-  const handleScroll = (id)=>{
-    console.log("id>>>>",id)
-    let element = document.getElementById(id);
-    window.scrollTo({
-      top:element.offsetTop,
-      behavior:"smooth"
-    })
-  }
-  
   const handleDrawerState = () => {
     setMobileDrawer(!mobileDrawer);
   };
 
   const drawerMobile = (
-    <Box component={"nav"} onClick={() => handleDrawerState()} >
+    <Box component={"nav"} onClick={() => handleDrawerState()}>
       <Grid container item xs={5} sm={3} md={3} lg={3} xl={3}>
         <Grid
           item
@@ -38,9 +37,13 @@ const Header = () => {
           mx={2}
           sx={{ display: { xs: "block", sm: "none" } }}
         >
-          <img src={Logo} alt="Logo" style={{ width: "100%", height: "100%" }} />
+          <img
+            src={Logo}
+            alt="Logo"
+            style={{ width: "100%", height: "100%" }}
+          />
         </Grid>
-        <Grid item xs={3} sm={2} md={2} lg={2} xl={2}  my={2} mx={-1}>
+        <Grid item xs={3} sm={2} md={2} lg={2} xl={2} mx={-1} my={2}>
           <Typography
             sx={{ fontSize: { xs: 22, md: 24, lg: 24 } }}
             style={{
@@ -52,9 +55,8 @@ const Header = () => {
             Trafalgar
           </Typography>
         </Grid>
-
       </Grid>
-      <Divider/>
+      <Divider />
 
       <Grid
         container
@@ -65,29 +67,33 @@ const Header = () => {
         style={{
           flexDirection: "row",
           justifyContent: "flex-end",
-          position:"sticky",
-          top:0,
-          left:0,
-          background:'white'
+          position: "sticky",
+          top: 0,
+          left: 0,
+          background: "white",
         }}
       >
-        {navItems.map((item,index) => (
+        {navItems.map((item, index) => (
           <Grid
             container
             item
             xs={12}
             my={3}
             justifyContent={"center"}
-            sx={{ fontSize: {xs:'1.2rem'} }}
+            sx={{ fontSize: { xs: "1.2rem" } }}
             style={{
               color: "#1F1534",
               fontWeight: "400",
               fontFamily: "Mulish",
             }}
-            id={item}
-            onClick={()=>handleScroll(item)}
+            // onClick={() => handleScroll(item)}
           >
-            {item}
+            <a
+              style={{ textDecoration: "none" }}
+              href={`#${item.replaceAll(" ", "-").toLocaleLowerCase()}`}
+            >
+              {item}
+            </a>
           </Grid>
         ))}
       </Grid>
@@ -104,27 +110,31 @@ const Header = () => {
         xl={12}
         justifyContent={"space-between"}
         padding={"20px 20px"}
-        position={'sticky'}
+        position={"sticky"}
         top={0}
         left={0}
-sx={{background:'white'}}
+        sx={{ background: "white" }}
       >
-        <Grid
-          container
-          item
-          xs={5}
-          sm={3}
-          md={3}
-          lg={3}
-        >
+        <Grid container item xs={5} sm={3} md={3} lg={3}>
           <Grid item xs={3} sm={2} md={2} lg={2}>
-            <img
-              src={Logo}
-              alt="Logo"
-              style={{ width: "100%", height: "95%" }}
-            />
+            <a href="#home">
+              <img
+                src={Logo}
+                alt="Logo"
+                style={{ width: "100%", height: "95%" }}
+              />
+            </a>
           </Grid>
-          <Grid item xs={3} sm={2} md={2} lg={2} xl={2} mx={1}>
+          <Grid
+            item
+            xs={3}
+            sm={2}
+            md={2}
+            lg={2}
+            xl={2}
+            mx={1}
+            sx={{ my: { xs: 0, sm: 0, md: 1 } }}
+          >
             <Typography
               sx={{ fontSize: { xs: 22, md: 24, lg: 24 } }}
               style={{
@@ -155,7 +165,7 @@ sx={{background:'white'}}
               xs={2}
               sm={2}
               id={item}
-              onClick={()=>handleScroll(item)}
+              // onClick={() => handleScroll(item)}
               justifyContent={"center"}
               sx={{
                 fontSize: { sm: ".9rem", md: "1.2rem" },
@@ -167,7 +177,12 @@ sx={{background:'white'}}
                 fontFamily: "Mulish",
               }}
             >
-              {item}
+              <a
+                style={{ textDecoration: "none" }}
+                href={`#${item.replaceAll(" ", "-").toLocaleLowerCase()}`}
+              >
+                {item}
+              </a>
             </Grid>
           ))}
           <Grid
@@ -177,7 +192,7 @@ sx={{background:'white'}}
             xs={2}
             sx={{ display: { xs: "block", sm: "none" } }}
           >
-            <MenuIcon  style={{color:"#458FF8"}} />
+            <MenuIcon style={{ color: "#458FF8" }} />
           </Grid>
         </Grid>
       </Grid>

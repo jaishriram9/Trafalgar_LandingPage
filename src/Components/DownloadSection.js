@@ -6,6 +6,7 @@ import downloadIcon from "../assets/Images/downloadIcon.png";
 const DownloadSection = () => {
   return (
     <Grid
+      id="Apps"
       container
       xs={12}
       mt={10}
@@ -45,13 +46,13 @@ const DownloadSection = () => {
           item
           container
           flexDirection={"row"}
-          justifyContent={'center'}
+          justifyContent={"center"}
           xs={6}
           sm={5}
           md={4}
           sx={{
             px: { xs: 1, sm: 2 },
-            py:1,
+            py: 1,
             border: "1px solid #458FF6",
             borderRadius: 20,
           }}
@@ -61,7 +62,12 @@ const DownloadSection = () => {
           <img
             src={downloadIcon}
             alt="downloadicon"
-            style={{ width: "10px", height: "12px", marginLeft: 3,marginTop:5 }}
+            style={{
+              width: "10px",
+              height: "12px",
+              marginLeft: 3,
+              marginTop: 5,
+            }}
           />
         </Grid>
       </Grid>

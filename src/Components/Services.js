@@ -50,7 +50,7 @@ const serviceArr = [
 
 const Services = () => {
   return (
-    <Grid container xs={12}>
+    <Grid container xs={12} id="services">
       <Grid container item xs={12} justifyContent={"center"}>
         <Typography
           sx={{ fontSize: { xs: 30, sm: 32, md: 36 } }}
@@ -209,23 +209,21 @@ const Services = () => {
             md={4}
             sx={{
               px: { xs: 1, sm: 2 },
-              py:{xs:1},
+              py: { xs: 1 },
               border: "1px solid #458FF6",
               borderRadius: 20,
-              marginLeft:2
+              marginLeft: 2,
             }}
           >
             <Typography
               sx={{
-                textAlign:'center',
+                textAlign: "center",
                 color: "#458FF6",
                 textTransform: "capitalize",
-               
               }}
             >
-              Learn More 
+              Learn More
             </Typography>
-           
           </Grid>
         </Grid>
       </Grid>

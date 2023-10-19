@@ -5,9 +5,10 @@ import Ellipse from "../assets/Images/Ellipse 8.png";
 
 const Footer = () => {
   return (
-    <Grid container  sx={{mt :10}}>
+    <Grid container sx={{ mt: 10 }} id="about-us">
       <Grid
         item
+        id="About Us"
         container
         style={{
           background: `url(${Image})`,
@@ -26,7 +27,6 @@ const Footer = () => {
             container
             style={{ height: "100px", marginTop: 20, paddingLeft: 20 }}
           >
-            
             <Grid
               item
               xs={4}
@@ -40,24 +40,23 @@ const Footer = () => {
                 // position:"static",
               }}
             >
-                <Typography
-                sx={{mx:4}}
+              <Typography
+                sx={{ mx: 4 }}
                 style={{
                   color: "#5B9BF3",
                   fontSize: 28,
-                  maxWidth:20,
+                  maxWidth: 20,
                   fontWeight: "700",
                   fontFamily: "Mulish",
-                  textAlign:"center",
-                  marginTop:20,
+                  textAlign: "center",
+                  marginTop: 20,
                 }}
               >
                 T
               </Typography>
-            
             </Grid>
             <Typography
-            sx={{mx:{xs:0,md:-2}}}
+              sx={{ mx: { xs: 0, md: -2 } }}
               style={{
                 color: "white",
                 fontFamily: "Mulish",

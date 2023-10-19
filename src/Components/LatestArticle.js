@@ -32,7 +32,7 @@ const cardsData = [
 
 const LatestArticle = () => {
   return (
-    <Grid container xs={12} justifyContent={"center"}>
+    <Grid container xs={12} justifyContent={"center"} id="apps">
       <Grid item container xs={12} sm={8} p={4} justifyContent={"center"}>
         <Typography
           sx={{ fontSize: { xs: "28px", sm: "34px", md: "36px" } }}
@@ -44,7 +44,14 @@ const LatestArticle = () => {
       <Grid container xs={12} sx={{ px: { xs: 4, sm: 2, md: 10 } }}>
         {cardsData.map((item) => (
           <Grid item xs={12} sm={4} md={4} my={2}>
-            <Card sx={{ maxWidth: "95%", borderRadius: 5, maxHeight: 512,backgroundColor:"white" }}>
+            <Card
+              sx={{
+                maxWidth: "95%",
+                borderRadius: 5,
+                maxHeight: 512,
+                backgroundColor: "white",
+              }}
+            >
               <CardMedia
                 component="img"
                 alt={item.name}
@@ -84,8 +91,18 @@ const LatestArticle = () => {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Grid item 
-                sx={{textTransform: "capitalize", px: 3 ,backgroundColor:"white",color:"#4089ED",fontWeight:"600",fontSize:16,fontFamily:"Mulish"}}>
+                <Grid
+                  item
+                  sx={{
+                    textTransform: "capitalize",
+                    px: 3,
+                    backgroundColor: "white",
+                    color: "#4089ED",
+                    fontWeight: "600",
+                    fontSize: 16,
+                    fontFamily: "Mulish",
+                  }}
+                >
                   Read More
                 </Grid>
               </CardActions>
@@ -93,13 +110,22 @@ const LatestArticle = () => {
           </Grid>
         ))}
       </Grid>
-      <Grid container item xs={12} justifyContent={'center'} >
-        <Grid container item xs={4} sm={3} md={2}  justifyContent={'center'} py={.5}  border= "1px solid #458FF6"
-              borderRadius= '20px'>
+      <Grid container item xs={12} justifyContent={"center"}>
+        <Grid
+          container
+          item
+          xs={4}
+          sm={3}
+          md={2}
+          justifyContent={"center"}
+          py={0.5}
+          border="1px solid #458FF6"
+          borderRadius="20px"
+        >
           <Typography
             sx={{
               color: "#458FF6",
-             
+
               textTransform: "capitalize",
             }}
           >
