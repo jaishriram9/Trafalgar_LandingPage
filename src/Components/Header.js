@@ -1,45 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Typography, Grid } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Logo from "../assets/Images/Ellipse.png";
 import MenuIcon from "@mui/icons-material/Menu";
-const navItems = ["Home", "Find a Doctor", "Apps", "Testimonials", "About Us"];
+const navItems = ["Home", "Services", "Apps", "Testimonials", "About Us"];
 const drawerWidth = 260;
 
 const Header = () => {
   const [mobileDrawer, setMobileDrawer] = useState(false);
-  
-
-//   const handleScroll = (item) => {
-//     // item.current?.scrollIntoView({behavior: 'smooth'});
-//     let element = document.getElementById(newID);
-
-//  window.scrollTo({
-//      top: element.offsetTop,
-//     behavior: "smooth",
-//    });
-//   };
+  const scrollRef = useRef();
 
   // const handleScroll = (id) => {
-  //   // console.log("id in handlescroll", id.split(" ").length);
-  //  const newID =  id.split(" ").length > 1 ? `#${id.split(" ")[0]}` : `#${id}`;
-  //   let element = document.getElementById(newID);
-  //   console.log("element",element);
-
-  //   // if(element){
-  //   //   element.scrollIntoView({ behavior: 'smooth' });
-
-  //   // }
-  //   // window.scrollTo({
-  //   //   top: element.offsetTop,
-  //   //   behavior: "smooth",
-  //   // });
+  //   console.log("id>>>>", id);
+  //   let element = document.getElementById(id);
+  //   window.scrollTo({
+  //     top: element.offsetTop,
+  //     behavior: "smooth",
+  //   });
   // };
-
-
- 
 
   const handleDrawerState = () => {
     setMobileDrawer(!mobileDrawer);
@@ -63,7 +43,7 @@ const Header = () => {
             style={{ width: "100%", height: "100%" }}
           />
         </Grid>
-        <Grid item xs={3} sm={2} md={2} lg={2} xl={2} my={2} mx={-1}>
+        <Grid item xs={3} sm={2} md={2} lg={2} xl={2} mx={-1} my={2}>
           <Typography
             sx={{ fontSize: { xs: 22, md: 24, lg: 24 } }}
             style={{
@@ -106,10 +86,14 @@ const Header = () => {
               fontWeight: "400",
               fontFamily: "Mulish",
             }}
-            id={item}
             // onClick={() => handleScroll(item)}
           >
-            {item}
+            <a
+              style={{ textDecoration: "none" }}
+              href={`#${item.replaceAll(" ", "-").toLocaleLowerCase()}`}
+            >
+              {item}
+            </a>
           </Grid>
         ))}
       </Grid>
@@ -133,13 +117,24 @@ const Header = () => {
       >
         <Grid container item xs={5} sm={3} md={3} lg={3}>
           <Grid item xs={3} sm={2} md={2} lg={2}>
-            <img
-              src={Logo}
-              alt="Logo"
-              style={{ width: "100%", height: "95%" }}
-            />
+            <a href="#home">
+              <img
+                src={Logo}
+                alt="Logo"
+                style={{ width: "100%", height: "95%" }}
+              />
+            </a>
           </Grid>
-          <Grid item xs={3} sm={2} md={2} lg={2} xl={2} mx={1}>
+          <Grid
+            item
+            xs={3}
+            sm={2}
+            md={2}
+            lg={2}
+            xl={2}
+            mx={1}
+            sx={{ my: { xs: 0, sm: 0, md: 1 } }}
+          >
             <Typography
               sx={{ fontSize: { xs: 22, md: 24, lg: 24 } }}
               style={{
@@ -170,6 +165,7 @@ const Header = () => {
               xs={2}
               sm={2}
               id={item}
+              // onClick={() => handleScroll(item)}
               justifyContent={"center"}
               sx={{
                 fontSize: { sm: ".9rem", md: "1.2rem" },
@@ -182,9 +178,8 @@ const Header = () => {
               }}
             >
               <a
-                href={item.split(" ").length > 1 ?`#${item.split(" ")[0]}`:`#${item}`}
-                // onClick={() => handleScroll(item)}
                 style={{ textDecoration: "none" }}
+                href={`#${item.replaceAll(" ", "-").toLocaleLowerCase()}`}
               >
                 {item}
               </a>

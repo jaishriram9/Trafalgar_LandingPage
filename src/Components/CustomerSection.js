@@ -5,7 +5,7 @@ import CutomerImage from "../assets/Images/customer.png";
 
 const CustomerSection = () => {
   return (
-    <Grid container xs={12} my={8} justifyContent={"center"}>
+    <Grid container xs={12} my={8} justifyContent={"center"} id="testimonials">
       <Grid
         item
         xs={10}
@@ -33,12 +33,20 @@ const CustomerSection = () => {
         >
           What our customer are saying
         </Typography>
-        <Grid container item  >
-          <Grid item container alignItems={"center"} justifyContent={'center'} xs={12} sm={3} md={3} >
+        <Grid container item>
+          <Grid
+            item
+            container
+            alignItems={"center"}
+            justifyContent={"center"}
+            xs={12}
+            sm={3}
+            md={2.8}
+          >
             <img
               src={CutomerImage}
               alt="customerimage"
-              style={{ borderRadius: 150, width: "96%" }}
+              style={{ borderRadius: 150, width: "95%" }}
             />
           </Grid>
 
@@ -79,7 +87,14 @@ const CustomerSection = () => {
               </Typography>
             </Grid>
           </Grid>
-          <Grid item container alignItems= 'center' xs={10} sm={5} sx={{ my: { xs: 0, sm: 0 }, mx: {xs:2,sm:1} }}>
+          <Grid
+            item
+            container
+            alignItems="center"
+            xs={10}
+            sm={5}
+            sx={{ my: { xs: 0, sm: 0 }, mx: { xs: 2, sm: 1 } }}
+          >
             <Typography
               sx={{ fontSize: { xs: 16, sm: 19 } }}
               style={{

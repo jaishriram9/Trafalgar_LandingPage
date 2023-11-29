@@ -4,7 +4,7 @@ import MainSectionImage from "../assets/Images/header.png";
 
 const MainSection = () => {
   return (
-    <Grid container xs={12} p={4} id='Home' >
+    <Grid container xs={12} p={4} id="home">
       <Grid
         item
         xs={12}
@@ -35,19 +35,19 @@ const MainSection = () => {
         <Grid
           item
           container
-          justifyContent={'center'}
+          justifyContent={"center"}
           xs={6}
           sm={5}
           md={4}
           sx={{
-            p: {xs:1, md:1, },
-            fontSize:{xs:14,sm:18},
+            p: { xs: 1, md: 1 },
+            fontSize: { xs: 14, sm: 18 },
             color: "white",
             backgroundColor: "#458FF6",
             borderRadius: 20,
             textTransform: "capitalize",
-            fontFamily:"Mulish",
-            fontWeight:"700"
+            fontFamily: "Mulish",
+            fontWeight: "700",
           }}
         >
           Consult Today
