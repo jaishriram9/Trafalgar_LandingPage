@@ -1,11 +1,10 @@
-import React from "react";
+import React  from "react";
 import { Grid, Typography } from "@mui/material";
 import {
   Card,
   CardMedia,
   CardContent,
   CardActions,
-  Button,
 } from "@mui/material";
 import DiseaseImage from "../../src/assets/Images/disease.png";
 import Herbal from "../../src/assets/Images/herbal.png";
@@ -31,8 +30,10 @@ const cardsData = [
 ];
 
 const LatestArticle = () => {
+
+
   return (
-    <Grid container xs={12} justifyContent={"center"}>
+    <Grid container xs={12} justifyContent={"center"} >
       <Grid item container xs={12} sm={8} p={4} justifyContent={"center"}>
         <Typography
           sx={{ fontSize: { xs: "28px", sm: "34px", md: "36px" } }}

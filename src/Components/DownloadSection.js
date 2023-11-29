@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Grid, Button } from "@mui/material";
+import { Typography, Grid } from "@mui/material";
 import DownloadImage from "../assets/Images/Download.png";
 import downloadIcon from "../assets/Images/downloadIcon.png";
 
@@ -10,6 +10,7 @@ const DownloadSection = () => {
       xs={12}
       mt={10}
       sx={{ p: { xs: 3, sm: 5, md: 8 }, flexWrap: { xs: "wrap-reverse" } }}
+      id='Apps'
     >
       <Grid
         item

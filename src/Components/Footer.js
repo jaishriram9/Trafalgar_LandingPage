@@ -5,7 +5,7 @@ import Ellipse from "../assets/Images/Ellipse 8.png";
 
 const Footer = () => {
   return (
-    <Grid container  sx={{mt :10}}>
+    <Grid container  sx={{mt :10}} id='About'>
       <Grid
         item
         container

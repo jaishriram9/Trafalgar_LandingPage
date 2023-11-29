@@ -1,17 +1,16 @@
 import React from "react";
-import { Typography, Grid, Button } from "@mui/material";
+import { Typography, Grid } from "@mui/material";
 import MainSectionImage from "../assets/Images/header.png";
 
 const MainSection = () => {
   return (
-    <Grid container xs={12} p={4}>
+    <Grid container xs={12} p={4} id='Home' >
       <Grid
         item
         xs={12}
         sm={6}
         md={6}
         lg={5}
-        // border="1px solid red"
         justifyContent={"center"}
       >
         <Typography

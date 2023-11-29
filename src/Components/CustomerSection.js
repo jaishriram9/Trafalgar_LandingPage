@@ -13,7 +13,7 @@ const CustomerSection = () => {
         sx={{
           background: `url(${Rectangle})`,
           backgroundRepeat: `no-repeat`,
-          borderRadius: 5,
+          borderRadius: 8,
           backgroundSize: `100% 100%`,
           height: { xs: "100vh", sm: "50vh" },
           width: "100vw",

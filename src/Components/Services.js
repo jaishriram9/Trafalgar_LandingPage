@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Grid, Button } from "@mui/material";
+import { Typography, Grid } from "@mui/material";
 import Frame from "../assets/Images/Frame.png";
 import Frame1 from "../assets/Images/Frame1.png";
 import Frame2 from "../assets/Images/Frame2.png";
@@ -50,8 +50,8 @@ const serviceArr = [
 
 const Services = () => {
   return (
-    <Grid container xs={12}>
-      <Grid container item xs={12} justifyContent={"center"}>
+    <Grid container xs={12} >
+      <Grid container item xs={12} justifyContent={"center"} id='Find'>
         <Typography
           sx={{ fontSize: { xs: 30, sm: 32, md: 36 } }}
           style={{ color: "black", fontFamily: "Mulish", fontWeight: "700" }}
@@ -59,7 +59,7 @@ const Services = () => {
           Our Services
         </Typography>
       </Grid>
-      <Grid container item xs={12} p={2} justifyContent={"center"}>
+      <Grid container item xs={12} p={2} justifyContent={"center"} >
         <Grid item xs={10} sm={10} md={10}>
           <Typography
             sx={{
